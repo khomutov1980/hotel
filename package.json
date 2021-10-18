@@ -1,0 +1,23 @@
+{
+  "name": "hotel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khomutov1980/hotel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khomutov1980/hotel/issues"
+  },
+  "homepage": "https://github.com/khomutov1980/hotel#readme",
+  "dependencies": {
+    "node-sass": "^6.0.1"
+  }
+}
