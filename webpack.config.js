@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     mode: "development",
@@ -10,13 +11,15 @@ module.exports = {
         clean: true,
     },
     devtool: 'inline-source-map',
-    plugins: [
-        new HtmlWebpackPlugin({
-          template: "./index.pug"
-        }),
-      ],
+    devServer: {
+      static: './dist',
+    },
       module: {
         rules: [
+          {
+            test: /\.html$/i,
+            loader: "html-loader",
+            },
           {
             test: /\.pug$/,
             use: [
@@ -25,6 +28,42 @@ module.exports = {
               },
             ],
           },
+          {
+              test: /\.(sa|sc|c)ss$/,
+              use: [
+                  // fallback to style-loader in development
+                    process.env.NODE_ENV !== "production"
+                    ? "style-loader"
+                     :MiniCssExtractPlugin.loader,
+                  "css-loader",
+                  {
+                    loader: "postcss-loader",
+                    options: {
+                        postcssOptions: {
+                            plugins: [
+                                [
+                                    "postcss-preset-env",
+                                    {
+                                        // Options
+                                    },
+                                ],
+                            ],
+                        },
+                    },
+                },
+                  "sass-loader",
+              ],
+          },
         ],
-      }
+      },    
+    plugins: [
+        new HtmlWebpackPlugin({
+          template: "./src/index.pug"
+        }),
+        new MiniCssExtractPlugin({
+          filename: "[name].[contenthash].css",
+          //chunkFilename: "[id].css",
+        })
+      ],
+
 };
