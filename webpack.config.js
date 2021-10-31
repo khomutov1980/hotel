@@ -14,8 +14,8 @@ module.exports = {
     entry: './src/app.js',
     output: {
         filename: '[name].[contenthash].js',
-        //path: path.resolve(__dirname, 'dist'),
-        assetModuleFilename: "assets/[hash][ext][query]",
+        path: path.resolve(__dirname, 'dist'),
+        assetModuleFilename: 'assets/[hash][ext][query]',
         clean: true,
     },
     devtool: 'inline-source-map',
@@ -33,7 +33,7 @@ module.exports = {
       }),
       new MiniCssExtractPlugin({
         filename: "[name].[contenthash].css",
-        //chunkFilename: "[id].css",
+        chunkFilename: "[id].css",
       })
     ],
       module: {
@@ -43,14 +43,8 @@ module.exports = {
             loader: "html-loader",
             },
           {
-            test: /\.pug$/,
-            use: [
-              {
-                loader: "simple-pug-loader",
-                
-              },
-             
-            ],
+            test: /\.pug$/,     
+                loader: "pug-loader",               
             exclude: /(node_modules|bower_components)/,
           },
           {
@@ -80,9 +74,13 @@ module.exports = {
               ],
           },
           {
-            test: /\.(png|svg|jpg|jpeg|gif)$/i,
+            test: /\.(png|svg|jpg|jpeg|gif)$/,
             type: 'asset/resource',
-        },
+          },
+          {
+            test: /\.(woff|woff2|eot|ttf|otf)$/i,
+            type: 'asset/resource',
+          },
         ],
       },    
 };
