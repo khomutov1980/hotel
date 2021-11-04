@@ -1,0 +1,53 @@
+
+
+.btn {
+    box-sizing: border-box;
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0;
+    border-radius: $border-radius;
+    // border: 1px solid $gray-lighter;
+    border: 0;
+    padding: $field-padding-vertical  $field-padding-horizontal;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    user-select: none;
+    text-align: center;
+    font-size: 12px;
+    font-family: inherit;
+    line-height: $line-height;
+    text-decoration: none;
+    text-transform: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $text-color;
+    background-color: $btnbg;
+    background-image: $btnbg;
+    cursor: pointer;
+    
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: $primaryColor;
+      background-color: $darkshade-25;
+      // border-color: darken($gray-lighter, 12%);
+    }
+    &_signin {
+        width: 196px;
+        height: 34px;
+    }
+    &_login {
+        //position: relative;
+        $border: 2px;
+        width: 87px;
+        height: 34px;
+        margin-right: 20px;
+        
+        border-radius: $border-radius;
+        background: linear-gradient($infoBG, $infoBG) padding-box, $btnbg border-box;
+        border: solid $border transparent;
+        color: $purple;
+    }
+}

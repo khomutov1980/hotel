@@ -1,5 +1,6 @@
 $primaryColor: darkcyan;
 $secondaryColor: darkslategray;
+$infoBG: #FFFFFF;
 
 $darkshade-100: #1F2041;
 $darkshade-75: rgba(31, 32, 65, 0.75);
@@ -11,8 +12,28 @@ $purple: #BC9CFF;
 $green: #6FCF97;
 
 
+//button
+$btnheight: 44px;
+$btnwidth: 320px;
+$btnbg: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+$border-radius: 22px;
+$field-padding-vertical: 2px;
+$field-padding-horizontal: 5px;
+$line-height: 15px;
+$text-color: #FFFFFF;
+
+$min-width: 320px;
+
+
+
 html {
   font-family: generalFont;
+  display: block;
+  @media (min-width: $min-width) {
+    display: block;
+    
+  };
+
 }
 
 h1  {

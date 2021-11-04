@@ -1,3 +1,5 @@
-.header
-  include ../logo/_logo
-  p жизнь!!!
+.header.header__inner
+  +logo()
+  .wrapper
+    +btn("войти","btn_login")
+    +btn("зарегистрироваться","btn_signin")
