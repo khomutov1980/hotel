@@ -19,8 +19,13 @@
     "url": "https://github.com/khomutov1980/hotel/issues"
   },
   "homepage": "https://github.com/khomutov1980/hotel#readme",
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^3.6.0"
+  },
   "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "babel-loader": "^8.2.3",
     "css-loader": "^6.4.0",
     "html-loader": "^3.0.0",
     "html-webpack-plugin": "^5.4.0",

@@ -1,5 +1,4 @@
-mixin logo()
-  .logo
-    img.src(src=require("./bem/logo/logo.png") alt="logo")
-    include toxin.svg
+mixin logo(href)
+  a.logo(href = href)&attributes(attributes)
+    block
   

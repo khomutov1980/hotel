@@ -1,5 +1,7 @@
 .header.header__inner
-  +logo()
+  +logo("/")
+    //img.src(src=require("./bem/logo/logo.svg") alt="logo")
+    include ../logo/logo.svg
   .wrapper
     +btn("войти","btn_login")
     +btn("зарегистрироваться","btn_signin")
