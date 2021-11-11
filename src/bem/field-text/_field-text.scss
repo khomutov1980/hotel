@@ -1,0 +1,33 @@
+.field-text {
+   display: flex;
+   flex-wrap: wrap;
+   width: 320px;
+
+    &__input {
+      width: 288px;
+      font-family: inherit;
+      font-size: 14px;
+      border: 1px solid $darkshade-25;
+      border-radius: 4px;
+      padding: 12px 15px;
+      color: $darkshade-25;
+    }
+    &__input:focus {
+      border: 1px solid $darkshade-50;
+      color: $darkshade-75;
+    }
+    &__input:hover {
+        border: 1px solid $darkshade-50;
+        color: $darkshade-75;
+      }
+
+    &__name {
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;  
+        text-transform: uppercase;
+        padding-bottom: 5px;
+    }
+
+
+}
